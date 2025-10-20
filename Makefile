@@ -4,11 +4,10 @@ grpc:
 http:
 	docker build -t http-service:latest http-service
 
-apply-all:
-	kubectl apply -f .
-
-delete-all:
-	kubectl delete -f .
+load:
+	minikube image load grpc-service:latest && \
+	minikube image load http-service:latest && \
+	minikube image load alpine:latest
 
 apply:
 	kubectl apply -f grpc-deployment.yaml -f http-deployment.yaml
