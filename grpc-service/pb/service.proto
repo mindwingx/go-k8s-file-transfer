@@ -1,0 +1,20 @@
+syntax = 'proto3';
+
+option go_package = "grpc-service/api";
+
+message File {
+  string contentType = 1;
+  bytes contentBytes = 2;
+}
+
+message  UploadReq{
+  File file = 1;
+}
+
+message  UploadResp{
+  string message = 1;
+}
+
+service Upload {
+  rpc UploadImage(UploadReq) returns (UploadResp);
+}

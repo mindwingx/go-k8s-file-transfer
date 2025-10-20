@@ -1,0 +1,8 @@
+.git
+api/.gitignore
+.idea
+.vscode
+.DS_Store
+.gitlab-ci.yml
+.gitmodules
+/deploy
